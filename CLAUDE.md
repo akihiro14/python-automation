@@ -17,11 +17,38 @@ python-automation/
 ├── CLAUDE.md              # このファイル
 ├── .gitignore             # Git除外設定
 ├── .venv/                 # Python仮想環境（Gitに含めない）
-├── scrape_books.py        # Webスクレイピングスクリプト
-└── books_YYYYMMDD.md      # スクレイピング結果（日付付きMarkdown）
+├── scrape_books.py        # BeautifulSoupスクレイピングスクリプト
+├── scrape_quotes.py       # Playwrightスクレイピングスクリプト
+├── books_YYYYMMDD.md      # 書籍スクレイピング結果
+├── quotes_YYYYMMDD.md     # 名言スクレイピング結果
+└── quotes_YYYYMMDD.png    # 名言ページのスクリーンショット
 ```
 
 ## スクリプト一覧
+
+### scrape_quotes.py
+
+[quotes.toscrape.com/js](https://quotes.toscrape.com/js) から名言をPlaywrightでスクレイピングするスクリプト。
+
+**機能:**
+- robots.txt を読み込み、禁止パスへのアクセスを回避
+- JavaScriptで描画される名言（テキスト・著者名）を全ページ（10ページ / 100件）取得
+- 1ページ目のスクリーンショットを `quotes_YYYYMMDD.png` として保存
+- リクエスト間に 1〜3 秒のランダム待機
+- 接続エラー・タイムアウト発生時はログ出力して終了
+- 結果を `quotes_YYYYMMDD.md` として保存
+
+**実行方法:**
+```bash
+.venv\Scripts\activate
+python scrape_quotes.py
+```
+
+**依存ライブラリ:**
+- `playwright`
+- `requests`
+
+---
 
 ### scrape_books.py
 
