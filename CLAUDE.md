@@ -15,6 +15,7 @@ Pythonを使った自動化スクリプトの開発・学習プロジェクト�
 ```
 python-automation/
 ├── CLAUDE.md              # このファイル
+├── README.md              # プロジェクト説明（セットアップ・実行方法）
 ├── .gitignore             # Git除外設定
 ├── .venv/                 # Python仮想環境（Gitに含めない）
 ├── scrape_books.py        # BeautifulSoupスクレイピングスクリプト
