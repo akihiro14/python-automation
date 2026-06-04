@@ -17,6 +17,8 @@ __pycache__/
 dist/
 build/
 .eggs/
+
+# 仮想環境
 .venv/
 venv/
 env/
